@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TinymceDemo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.tiny.cloud/1/m9n2q2q44u3pcddpand59o5vjz31y6lm74ez2g7q8uvtkodg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: '#texteditor',
+      height: 600,
+      skin: 'oxide-dark',
+      content_css: 'writer',
+      plugins: [
+       'advlist autolink lists link image charmap print preview anchor',
+       'searchreplace visualblocks code fullscreen',
+       'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar:
+        'undo redo | formatselect | bold italic backcolor | ' +
+        'alignleft aligncenter alignright alignjustify | ' +
+        'bullist numlist outdent indent | removeformat | help'
+    });
+
+    tinymce.activeEditor.uploadImages(function(success){
+      document.forms[0].submit();
+    });
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
